@@ -1,0 +1,22 @@
+#20 dollars per seat A section (300 seats)
+#15 dollars per seat B section (500 seats)
+# 10 dollars per seat C section (200 seats)
+
+def main():
+   Aseatprice = 20
+   Bseatprice = 15
+   Cseatprice = 10
+   
+   seatA = int(input("Input number of ticket sold in Section A: "))
+   seatB = int(input("Input number of ticket sold in Section B: "))
+   seatC = int(input("Input number of ticket sold in Section C: "))
+   
+   if(seatA < 0 or seatA > 300):
+       print("Input Section A must be between 0 - 300!")
+   elif(seatB < 0 or seatB > 500):
+       print("Input Section B must be between 0 - 500!")
+   elif(seatC < 0 or seatC > 200):
+       print("Input Section C must be between 0 - 200!")
+   else:income = (seatA * Aseatprice) + (seatB * Bseatprice) + (seatC * Cseatprice)
+   print("Total income from ticket sales: $" + str(income))
+main()

@@ -1,0 +1,19 @@
+# 1 input(recieve info)
+from cgi import print_arguments
+from wsgiref.handlers import format_date_time
+
+
+charge_for_food = float(input('\nEnter charge for food: $'))
+# 2 process(calculate info)
+Tip_Percentage = .18
+Sales_Tax = .07
+
+tip = (charge_for_food * Tip_Percentage)
+sales_tax = (charge_for_food * Sales_Tax)
+Total = charge_for_food + tip + sales_tax
+#3 output (display info)
+print ('Cost of food = $', format(charge_for_food,',.2f'), sep='')
+#charge for food = $90
+print('Tip = $', format(tip,',.2f'), sep='')
+print('Sales Tax = $', format(sales_tax,',.2f'), sep='' )
+print('Total = $', format(Total,',.2f'), sep='')

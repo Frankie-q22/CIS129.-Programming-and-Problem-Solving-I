@@ -1,0 +1,47 @@
+def main():
+ import random
+ 
+ print('Welcome To The Dice Game')
+ 
+ name1 = input("What is Player 1's name? ")
+ name2 = input("What is Player 2's name? ")
+
+ score1 = 100
+ score2 = 100
+
+ while True:
+    print(name1 + ": " + str(score1))
+    print(name2 + ": " + str(score2))
+
+    roll1 = input(name1 + ", would you like to roll the dice? (y/n) ")
+    if roll1 == "n":
+        break
+    if roll1 != "y":
+        print("Please enter 'y' or 'n'")
+        continue
+
+    roll2 = input(name2 + ", would you like to roll the dice? (y/n) ")
+    if roll2 == "n":
+        break
+    if roll2 != "y":
+        print("Please enter 'y' or 'n'")
+        continue
+
+ dice1 = random.randint(1, 6)
+ dice2 = random.randint(1, 6)
+
+ print(name1 + " rolled a " + str(dice1))
+ print(name2 + " rolled a " + str(dice2))
+
+ if dice1 > dice2:
+         score1 += 10
+         score2 -= 10
+         print(name1 + " wins this round!")
+ elif dice1 < dice2:
+         score1 -= 10
+         score2 += 10
+         print(name2 + " wins this round!")
+ else:
+        print("It's a tie!")
+        
+main()

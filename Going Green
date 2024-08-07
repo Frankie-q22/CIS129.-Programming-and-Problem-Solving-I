@@ -1,0 +1,42 @@
+#Constant variable for arrays
+SIZE = 12
+# define main
+def main():
+     def userInput(msg):
+         while True:
+             try: 
+                 num = float(input(msg))
+                 return num
+             except: print('Please enter a whole number! No letters or Decimals') 
+     def displayOutcome(savings, notgreen, green, months):
+         print('---------------------------------------------------------------------')
+         print('\t\t\t\t' + 'SAVINGS')
+         print('______________________________________________________________________')
+         print('SAVINGS' + '\t\t' + 'NOT GREEN' + '\t\t' + 'GONE GREEN' + '\t\t' + 'MONTHS')
+         print('______________________________________________________________________')
+         for i in range(SIZE):
+             print('$ '+str(savings[i]) + '\t\t' + '$ ' + str(notgreen[i]) + '\t\t\t' + '$ ' + str(green[i]) + '\t\t\t' + months[i] +'\n') 
+     endProgram = 'no'
+     while endProgram == 'no':
+        notGreenCost = [0] * SIZE
+        goneGreenCost = [0] * SIZE
+        savings = [0] * SIZE
+        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        print('=== Welcome to the GREEN or NOT GREEN savings calculator program! ===')
+        for i in range(len(months)):
+            msg = 'Enter Not GREEN energy costs for ' + months[i] +'\nEnter now --> $'
+            notGreenCost[i] = userInput(msg)
+            print('---------------------------------------------------------------------')
+        for i in range(len(months)):
+            msg = 'Enter GREEN energy costs for ' + months[i] +'\nEnter now --> $'
+            goneGreenCost[i] = userInput(msg)  
+        for i in range(len(months)): 
+            savings[i] = notGreenCost[i] - goneGreenCost[i]
+            displayOutcome(savings, notGreenCost, goneGreenCost, months)
+            endProgram = input('Do you want to end the program?(enter yes or no)\n')
+            while endProgram != 'yes' and endProgram != 'no':
+                print('please enter yes or no')
+                endProgram = input('do you want to end the program?\n')
+                print('===Thank You For Using The Program!===')
+   
+main()  

@@ -1,0 +1,47 @@
+# Module 5 Lab-5
+# The main function
+def main():
+    monthlySales = getSales() #call to get sales
+   # This function gets the monthly sales
+def getSales():
+    monthlySales = float(input('Enter the monthly sales $'))
+    return monthlySales
+
+# This function gets the percent of increase in sales
+def getIncrease():
+    
+#call to get the store bonus
+
+     salesIncrease = getIncrease() #call to get sales increase
+
+     salesIncrease = float(input('Enter percent of sales increase: '))
+     salesIncrease = float(salesIncrease)
+     salesIncrease = salesIncrease / 100
+     return salesIncrease
+
+
+# This function determines the storeAmount bonus
+def storeBonus(monthlySales):
+  if monthlySales >=110000:
+        storeAmount = 6000
+  elif monthlySales >=100000:
+        storeAmount = 5000
+  elif monthlySales >=90000:
+        storeAmount = 4000
+  elif monthlySales >=80000:
+        storeAmount = 3000
+  else:
+        storeAmount = 0
+        return storeAmount
+ #call to get the store bonus
+  storeAmount = storeBonus(monthlySales)
+# This function prints the bonus information
+def printBonus(storeAmount, empBonus):
+   print (f'The store bonus amount is ${storeAmount}')
+   print (f'The employee bonus amount is ${empBonus}')
+   if storeAmount == 6000 and empBonus == 75:
+     print(f'Congrats! You have reached the highest bonus amounts possible!')
+ 
+# calls main
+main()
+ 

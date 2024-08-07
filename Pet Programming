@@ -1,0 +1,79 @@
+
+ 
+ 
+ 
+ 
+ 
+ #Alex Zaugg, Kiki, Malcolm, Manu, Akim, Andrew
+#CIS129 Fall 2022
+#Personal Information OOP
+#12-6-2022
+
+class Pet:
+ def __init__(self, name,type,age):
+        self.pet_name = name
+        self.pet_type = type
+        self.pet_age = age
+        
+ 
+ def getpetName(self):
+     return self.name
+ def getpetType(self):
+     return self.type
+ def getpetAge(self):
+     return self.age
+
+class PersonalInformation:
+  def __init__(self,name,Animaltype,age):
+    self.__name = name
+    self.__Animaltype = Animaltype
+    self.__age = age
+    
+    
+  def getName(self):
+    return self.__name
+  def getAnimaltype(self):
+    return self.__Animaltype
+  def getAge(self):
+    return self.__age
+ 
+
+def main():
+  petOne = getInfo()
+  petTwo = getInfo()
+  petThree = getInfo()
+  classForPetOne = PersonalInformation(petOne[0],petOne[1],petOne[2])
+  classForPetTwo = PersonalInformation(petTwo[0],petTwo[1],petTwo[2])
+  classForPetThree = PersonalInformation(petThree[0],petThree[1],petThree[2])
+
+  displayInfo("One",classForPetOne._PersonalInformation__name,classForPetOne._PersonalInformation__Animaltype, classForPetOne._PersonalInformation__age)
+  displayInfo("Two",classForPetTwo._PersonalInformation__name,classForPetTwo._PersonalInformation__Animaltype, classForPetTwo._PersonalInformation__age)
+  displayInfo("Three",classForPetThree._PersonalInformation__name,classForPetThree._PersonalInformation__Animaltype, classForPetThree._PersonalInformation__age)
+
+  print("------------------------------")
+  
+  
+def getInfo():
+  arrayToReturn = []
+  nameToAppend = input("Enter Pet Name: ")
+  addressToAppend = input("What kind of Animal is " + nameToAppend + "? ")
+  ageToAppend = input("How Old Is " + nameToAppend + "? ")
+  arrayToReturn.append(nameToAppend)
+  arrayToReturn.append(addressToAppend)
+  arrayToReturn.append(ageToAppend)
+  return arrayToReturn
+
+def displayInfo(value,name,Animaltype,age):
+  print("------------------------------")
+  print("Pet",value + "\'s name is:", name)
+  print("/n")
+  print( name + " is a:", Animaltype)
+  print("/n")
+  print(name + " is", age ,"years old")
+  
+main()
+ 
+ 
+ 
+ 
+ 

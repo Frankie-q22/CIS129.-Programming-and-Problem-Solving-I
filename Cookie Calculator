@@ -1,0 +1,7 @@
+def main():
+ #each cookie has 300 calories
+ cookieseaten = int(input("How many cookies have you had: "))
+ caloriesconsumed = cookieseaten * 300
+ print("Amount of calories per cookie: 300")
+ print("Amount of calories consumed: ",caloriesconsumed)
+main()

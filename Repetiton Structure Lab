@@ -1,0 +1,18 @@
+def main():
+  totaldays = 7
+  BottlesPerDay = 0
+  totalBottlesCollected = 0
+  for day in range(totaldays):
+    BottlesPerDay = int(input('how many bottles were collected on day '+ format(day + 1) + ':' ))
+    totalBottlesCollected += BottlesPerDay
+    
+  def payout(amforbottles): 
+   amforbottles = amforbottles * 0.10
+   return amforbottles
+  def printInfo(totalBottlesCollected, totalamount):
+      print('the total number of bottles collected for the week: '+ format (totalBottlesCollected))
+      print ('total amount recieved is $', totalamount)
+ 
+  printInfo(totalBottlesCollected,payout(totalBottlesCollected))
+  
+main() 

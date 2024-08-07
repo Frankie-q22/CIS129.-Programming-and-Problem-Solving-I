@@ -1,0 +1,105 @@
+# Patient class
+class Patient:
+# constructor with each data fields
+ def __init__(self, FirstName, middleName, lastName, Address, city, state, ZIP, PhoneNumber, emergencyName, emergencyContact):
+  self.FirstName = FirstName
+  self.middleName = middleName
+  self.lastName = lastName
+  self.Address = Address
+  self.city = city
+  self.state = state
+  self.ZIP = ZIP
+  self.PhoneNumber = PhoneNumber
+  self.emergencyName = emergencyName
+  self.emergencyContact = emergencyContact
+  
+# setter and getter method for each attributes
+ def getFirstName(self):
+  return self.FirstName
+ def setFirstName(self, FirstName):
+  self.FirstName = FirstName
+ def getMiddleName(self):
+  return self.middleName
+ def setMiddleName(self, middleName):
+  self.middleName = middleName
+ def getLastName(self):
+  return self.lastName
+ def setLastName(self, lastName):
+  self.lastName = lastName
+ def getAddress(self):
+  return self.Address
+ def setAddress(self, Address):
+  self.Address = Address
+ def getCity(self, ):
+  return self.city
+ def setCity(self, city):
+  self.city = city
+ def getState(self):
+  return self.state
+ def setState(self, state):
+  self.state = state
+ def getZIP(self):
+  return self.ZIP
+ def setZIP(self, ZIP):
+  self.ZIP = ZIP
+ def getPhoneNumber(self):
+  return self.PhoneNumber
+ def setPhoneNumber(self, PhoneNumber):
+  self.PhoneNumber = PhoneNumber
+ def getEmergencyName(self):
+  return self.emergencyName
+ def setEmergencyName(self, emergencyName):
+  self.emergencyName = emergencyName
+ def getEmergencyContact(self):
+  return self.emergencyContact
+ def setEmergencyContact(self, emergencyContact):
+  self.emergencyContact = emergencyContact
+
+# str method to print the values
+ def __str__(self):
+  return "First Name: " + self.getFirstName() + "\nMiddle Name: " + self.getMiddleName() + \
+        "\nLast Name: " + self.getLastName() + "\nAddress: " + self.getAddress() + "\nCity: " + \
+        self.getCity() + "\nState: " + self.getState() + "\nZIP: " + self.getZIP() + "\nPhone: " + \
+        self.getPhoneNumber() + "\nEmergency Contact: " + self.getEmergencyName() + \
+        "\nEmergency Phone: " + self.getEmergencyContact()
+        
+# Procedure class
+class Procedure:
+   # constructor
+ def __init__(self, procedureName, date, practitionerName, charges):
+     self.procedureName = procedureName
+     self.date = date
+     self.practitionerName = practitionerName
+     self.charges = charges
+# setter and getter method for each data attributes
+ def getProcedureName(self):
+  return self.procedureName
+ def setProcedureName(self, procedureName):
+  self.procedureName = procedureName
+ def getDate(self):
+  return self.date
+ def setDate(self, date):
+  self.date = date
+ def getPractitionerName(self):
+  return self.practitionerName
+ def setPractitionerName(self, practitionerName):
+  self.practitionerName = practitionerName
+ def getCharges(self):
+  return self.charges
+ def setCharges(self, charges):
+  self.charges = charges
+# # str method to print the values
+def __str__(self):
+  return "\nProcedure: " + self.getProcedureName() + "\nDate: " + self.getDate() + "\nPractitioner: " + self.getPractitionerName() + "\nCharge: " + self.getCharges()
+ 
+ # Driver code to test methods
+if __name__ == '__main__':
+    # create Object of Patient class with Patient details
+   patient = Patient("James", "Edward", "Jones", "123 Main Street", "Billings", "Montana", "59000", "406-555-1212",
+                 	"Jenny Jones", "406-555-1213")
+   # print Patient details
+   print(patient)
+   # create Object of Procedure class with Procedure details
+   procedure1 = Procedure("Physical Ex@m", "8-24-2019", "Dr. Irvine", "250.00")
+   print(procedure1)
+

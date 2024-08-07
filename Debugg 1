@@ -1,0 +1,7 @@
+def checkEquality(num1,num2):
+    #change = to ==
+    if num1==num2:
+        print("The values are equal.")
+    else:
+        print("The values are NOT equal.")
+    

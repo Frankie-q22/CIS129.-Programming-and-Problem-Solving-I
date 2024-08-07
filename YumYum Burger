@@ -1,0 +1,85 @@
+def main():
+   endProgram, endOrder, totalBurger, totalFry, totalSoda, total, tax, subtotal, option, burgerCount, fryCount, sodaCount = declareVariables()
+
+   declareVariables()
+
+   while endProgram == 'no':
+
+       totalBurger, totalSoda, totalFry, total, tax, subtotal = resetVariables()
+
+       while endOrder == 'no':
+            print("Enter 1 for Yum Yum Burger")
+            print("Enter 2 for Grease Yum Fries")
+            print("Enter 3 for Soda Yum")
+
+            option = eval(input("Please make your selection here: "))
+
+            if option == 1:
+                   totalBurger = getBurger(totalBurger, burgerCount)
+            elif option == 2:
+                   totalFry = getFry(totalFry, fryCount)
+            elif option == 3:
+                   totalSoda = getSoda(totalSoda, sodaCount)
+            endOrder = input("Do you want to end your order?(Enter no to add more items): ")
+       total = calcTotal(totalBurger, totalFry, totalSoda, total, subtotal, tax)
+       printReceipt(total)
+
+       endProgram = input("Do you want to end the program?(Enter no to process a new order): ")
+       if endProgram == 'no': #o
+
+
+           main()
+
+
+       else: 
+           break
+
+def declareVariables():
+   endProgram = 'no'
+   endOrder = 'no'
+   totalBurger = 0
+   totalFry = 0
+   totalSoda = 0
+   total = 0
+   tax = 0
+   subtotal = 0
+   option = 0
+   burgerCount = 0
+   fryCount = 0
+   sodaCount = 0
+   return (endProgram, endOrder, totalBurger,totalFry, totalSoda, total, tax, subtotal,
+           option, burgerCount, fryCount, sodaCount)
+def resetVariables():
+   totalBurger = 0
+   totalFry = 0
+   totalSoda = 0
+   total = 0
+   tax = 0
+   subtotal = 0
+   return totalBurger, totalFry, totalSoda, total, tax, subtotal
+def getBurger(totalBurger, burgerCount):
+   burgerCount = eval(input("Enter the number of burgers you want: "))
+   totalBurger = totalBurger+burgerCount*.99
+   return totalBurger
+
+def getFry(totalFry, fryCount):
+   fryCount = eval(input("Enter the number of fries you want: "))
+   totalFry = totalFry + fryCount * .79
+   return totalFry
+
+def getSoda(totalSoda, sodaCount):
+   sodaCount = eval(input("Enter the number of soda's you want: "))
+   totalSoda = totalSoda + sodaCount * 1.09
+   return totalSoda
+
+def calcTotal(totalBurger, totalFry, totalSoda, total, subtotal, tax):
+   subtotal = totalBurger + totalFry + totalSoda
+   tax = subtotal * .06
+   total = subtotal + tax
+   return total
+
+def printReceipt(total):
+   print("Your total is $", total)
+          
+main()
+
